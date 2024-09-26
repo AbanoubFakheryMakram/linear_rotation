@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'hole_animation_page.dart';
 import 'home_page.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
         fontFamily: GoogleFonts.inter().fontFamily,
       ),
-      home: const HomePage(),
+      home: const CardHiddenAnimationPage(),
     );
   }
 }

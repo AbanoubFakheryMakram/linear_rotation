@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LinearText extends StatelessWidget {
-  const LinearText({super.key});
+  final double fontSize;
+  const LinearText({super.key, required this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,12 @@ class LinearText extends StatelessWidget {
             stops: const [0.0, 0.2, 0.8],
           ),
         ),
-        child: const Text(
+        child: Text(
           'LINEAR',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 110,
+            fontSize: fontSize,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

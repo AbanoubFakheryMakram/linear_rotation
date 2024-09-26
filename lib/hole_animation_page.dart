@@ -16,11 +16,12 @@ class CardHiddenAnimationPageState extends State<CardHiddenAnimationPage> with T
     begin: 0,
     end: 1.5 * cardSize,
   );
+
   late final holeAnimationController = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 300),
   );
-  double get holeSize => holeSizeTween.evaluate(holeAnimationController);
+
   late final cardOffsetAnimationController = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 1000),
@@ -30,15 +31,18 @@ class CardHiddenAnimationPageState extends State<CardHiddenAnimationPage> with T
     begin: 0,
     end: 2 * cardSize,
   ).chain(CurveTween(curve: Curves.easeInBack));
+
   late final cardRotationTween = Tween<double>(
     begin: 0,
     end: 0.5,
   ).chain(CurveTween(curve: Curves.easeInBack));
+
   late final cardElevationTween = Tween<double>(
     begin: 2,
     end: 20,
   );
 
+  double get holeSize => holeSizeTween.evaluate(holeAnimationController);
   double get cardOffset => cardOffsetTween.evaluate(cardOffsetAnimationController);
   double get cardRotation => cardRotationTween.evaluate(cardOffsetAnimationController);
   double get cardElevation => cardElevationTween.evaluate(cardOffsetAnimationController);
